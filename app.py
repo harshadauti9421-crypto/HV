@@ -14,7 +14,18 @@ from pathlib import Path
 import sys
 
 # Import custom src modules
-from src.config import DATA_RAW_DIR, DATA_PROCESSED_DIR, MODELS_DIR, OUTPUTS_DIR
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
+
+from src.config import (
+    DATA_RAW_DIR,
+    DATA_PROCESSED_DIR,
+    MODELS_DIR,
+    OUTPUTS_DIR
+)
 from src.utils import logger, safe_divide
 from src.data_loader import DataLoader
 from src.data_merger import DataMerger
