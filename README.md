@@ -7,7 +7,7 @@ An enterprise-grade AI application designed to predict e-commerce product net pr
 ## 📁 Directory Structure
 
 ```
-AI_Ecommerce_Profit_Prediction/
+hv/
 ├── data/
 │   ├── raw/
 │   └── processed/
