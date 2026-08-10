@@ -20,12 +20,24 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 
-from src.config import (
-    DATA_RAW_DIR,
-    DATA_PROCESSED_DIR,
-    MODELS_DIR,
-    OUTPUTS_DIR
-)
+from pathlib import Path
+
+# Project root
+BASE_DIR = Path(__file__).resolve().parent
+
+# Directories
+DATA_DIR = BASE_DIR / "data"
+DATA_RAW_DIR = DATA_DIR / "raw"
+DATA_PROCESSED_DIR = DATA_DIR / "processed"
+
+MODELS_DIR = BASE_DIR / "models"
+OUTPUTS_DIR = BASE_DIR / "outputs"
+
+# Create directories if they don't exist
+DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
+DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+MODELS_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 from src.utils import logger, safe_divide
 from src.data_loader import DataLoader
 from src.data_merger import DataMerger
